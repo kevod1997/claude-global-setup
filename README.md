@@ -34,10 +34,10 @@ Those are project-level instruction files and are intentionally out of scope.
 Install the packaged CLI from a versioned GitHub Release asset:
 
 ```bash
-npm install -g https://github.com/kevod1997/claude-global-setup/releases/download/vX.Y.Z/claude-global-setup-X.Y.Z.tgz
+npm install -g https://github.com/kevod1997/claude-global-setup/releases/download/v0.1.0/claude-global-setup-0.1.0.tgz
 ```
 
-Replace `X.Y.Z` with the version you want to install. Use release assets instead of mutable branches so installs stay pinned to a specific tarball.
+For future versions, replace `0.1.0` with the version you want to install. Use release assets instead of mutable branches so installs stay pinned to a specific tarball.
 
 For local development inside this repo:
 
@@ -132,6 +132,12 @@ After the release is published, users can install that exact version with:
 
 ```bash
 npm install -g https://github.com/kevod1997/claude-global-setup/releases/download/vX.Y.Z/claude-global-setup-X.Y.Z.tgz
+```
+
+Current release:
+
+```text
+https://github.com/kevod1997/claude-global-setup/releases/tag/v0.1.0
 ```
 
 ## References
