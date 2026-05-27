@@ -1,6 +1,6 @@
 {
   "name": "claude-global-setup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Install or update a user-global CLAUDE.md for Claude Code.",
   "license": "MIT",
   "type": "commonjs",

@@ -2,6 +2,8 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const test = require("node:test");
+const { execFile } = require("node:child_process");
+const { promisify } = require("node:util");
 
 const {
   MANAGED_BLOCK_END,
@@ -11,6 +13,9 @@ const {
   mergeManagedBlock,
   resolveTargetPath
 } = require("../lib/install");
+const { getPackageVersion, parseArgs } = require("../lib/cli");
+
+const execFileAsync = promisify(execFile);
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -99,4 +104,23 @@ test("loadTemplate strips a leading BOM from the template file", async () => {
   const template = await loadTemplate();
   assert.equal(template.charCodeAt(0), "#".charCodeAt(0));
   assert.doesNotMatch(template, /^\uFEFF/);
+});
+
+test("parseArgs accepts --version and -v", () => {
+  assert.equal(parseArgs(["--version"]).version, true);
+  assert.equal(parseArgs(["-v"]).version, true);
+});
+
+test("getPackageVersion matches package.json version", () => {
+  const packageJson = require("../package.json");
+  assert.equal(getPackageVersion(), packageJson.version);
+});
+
+test("CLI --version prints only the package version", async () => {
+  const { stdout, stderr } = await execFileAsync(process.execPath, ["./bin/claude-global-setup.js", "--version"], {
+    cwd: path.resolve(__dirname, "..")
+  });
+
+  assert.equal(stderr, "");
+  assert.equal(stdout.trim(), getPackageVersion());
 });
