@@ -1,0 +1,31 @@
+{
+  "name": "claude-global-setup",
+  "version": "0.1.0",
+  "description": "Install or update a user-global CLAUDE.md for Claude Code.",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevod1997/claude-global-setup.git"
+  },
+  "homepage": "https://github.com/kevod1997/claude-global-setup#readme",
+  "bugs": {
+    "url": "https://github.com/kevod1997/claude-global-setup/issues"
+  },
+  "bin": {
+    "claude-global-setup": "bin/claude-global-setup.js"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "CLAUDE.md",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node ./bin/claude-global-setup.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

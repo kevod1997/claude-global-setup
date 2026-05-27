@@ -1,0 +1,13 @@
+node_modules/
+*.tgz
+npm-debug.log*
+coverage/
+.nyc_output/
+.tmp-claude-global-setup-*/
+.tmp-cli-check/
+.tmp-package-test/
+.claude/
+.agents/
+skills-lock.json
+.DS_Store
+Thumbs.db
