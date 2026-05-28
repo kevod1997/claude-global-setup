@@ -1,11 +1,11 @@
 # claude-global-setup
 
-Install a global `CLAUDE.md` for Claude Code.
+One-shot setup for a global `CLAUDE.md` in Claude Code.
 
-## Install
+## Run it once
 
 ```bash
-npm install -g https://github.com/kevod1997/claude-global-setup/releases/download/v0.1.1/claude-global-setup-0.1.1.tgz
+npm exec --yes --package=https://github.com/kevod1997/claude-global-setup/releases/download/v0.1.2/claude-global-setup-0.1.2.tgz -- claude-global-setup --replace --yes
 ```
 
 ## What it does
@@ -16,13 +16,14 @@ npm install -g https://github.com/kevod1997/claude-global-setup/releases/downloa
   - macOS: `/Users/<user>/.claude/CLAUDE.md`
   - Linux: `/home/<user>/.claude/CLAUDE.md`
 - does not touch project files like `./CLAUDE.md` or `./.claude/CLAUDE.md`
+- does not require a permanent global install
 
 ## Usage
 
 ```bash
-claude-global-setup --help
-claude-global-setup --version
-claude-global-setup
+npm exec --yes --package=https://github.com/kevod1997/claude-global-setup/releases/download/v0.1.2/claude-global-setup-0.1.2.tgz -- claude-global-setup
+npm exec --yes --package=https://github.com/kevod1997/claude-global-setup/releases/download/v0.1.2/claude-global-setup-0.1.2.tgz -- claude-global-setup --merge --yes
+npm exec --yes --package=https://github.com/kevod1997/claude-global-setup/releases/download/v0.1.2/claude-global-setup-0.1.2.tgz -- claude-global-setup --version
 ```
 
 ## Options
